@@ -1,0 +1,25 @@
++--------+----------+----------------------------+---------------------+----------------------------------------------------+---------------------------------------------------------+
+| Domain | Method   | URI                        | Name                | Action                                             | Middleware                                              |
++--------+----------+----------------------------+---------------------+----------------------------------------------------+---------------------------------------------------------+
+|        | DELETE   | admin/trash/destroy/{post} | admin.trash.destroy | App\Http\Controllers\Admin\TrashController@destroy | App\Http\Middleware\EncryptCookies                      |
+|        |          |                            |                     |                                                    | Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse |
+|        |          |                            |                     |                                                    | Illuminate\Session\Middleware\StartSession              |
+|        |          |                            |                     |                                                    | Illuminate\View\Middleware\ShareErrorsFromSession       |
+|        |          |                            |                     |                                                    | App\Http\Middleware\VerifyCsrfToken                     |
+|        |          |                            |                     |                                                    | App\Http\Middleware\Authenticate                        |
+|        |          |                            |                     |                                                    | Illuminate\Routing\Middleware\SubstituteBindings        |
+|        | GET|HEAD | admin/trash/index          | admin.trash.index   | App\Http\Controllers\Admin\TrashController@index   | App\Http\Middleware\EncryptCookies                      |
+|        |          |                            |                     |                                                    | Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse |
+|        |          |                            |                     |                                                    | Illuminate\Session\Middleware\StartSession              |
+|        |          |                            |                     |                                                    | Illuminate\View\Middleware\ShareErrorsFromSession       |
+|        |          |                            |                     |                                                    | App\Http\Middleware\VerifyCsrfToken                     |
+|        |          |                            |                     |                                                    | App\Http\Middleware\Authenticate                        |
+|        |          |                            |                     |                                                    | Illuminate\Routing\Middleware\SubstituteBindings        |
+|        | GET|HEAD | admin/trash/restore/{post} | admin.trash.restore | App\Http\Controllers\Admin\TrashController@restore | App\Http\Middleware\EncryptCookies                      |
+|        |          |                            |                     |                                                    | Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse |
+|        |          |                            |                     |                                                    | Illuminate\Session\Middleware\StartSession              |
+|        |          |                            |                     |                                                    | Illuminate\View\Middleware\ShareErrorsFromSession       |
+|        |          |                            |                     |                                                    | App\Http\Middleware\VerifyCsrfToken                     |
+|        |          |                            |                     |                                                    | App\Http\Middleware\Authenticate                        |
+|        |          |                            |                     |                                                    | Illuminate\Routing\Middleware\SubstituteBindings        |
++--------+----------+----------------------------+---------------------+----------------------------------------------------+---------------------------------------------------------+
