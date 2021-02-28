@@ -180,8 +180,6 @@ return [
 
         App\Providers\ComposerServiceProvider::class,
 
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-
         Intervention\Image\ImageServiceProvider::class,
 
     ],
