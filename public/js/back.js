@@ -72,7 +72,7 @@ $(document).ready(function () {
             $.ajax({
                 data: data,
                 type: 'POST',
-                url: '/user/upload/image',
+                url: '/user/upload/' + entity + '/image',
                 cache: false,
                 contentType: false,
                 processData: false,
@@ -98,7 +98,7 @@ $(document).ready(function () {
             $.ajax({
                 data: {'remove': src, '_method': 'DELETE', 'entity': entity},
                 type: 'POST',
-                url: '/user/remove/image',
+                url: '/user/remove/' + entity + '/image',
                 cache: false,
                 success: function(msg) {
                     // console.log(msg);

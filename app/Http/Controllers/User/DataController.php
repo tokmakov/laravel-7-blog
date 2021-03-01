@@ -30,7 +30,7 @@ class DataController extends Controller {
         /*
          * Обновляем пользователя
          */
-        $user->update($request->all());
+        $user->update($request->only(['name', 'timezone']));
         /*
          * Возвращаемся на главную
          */

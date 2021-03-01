@@ -125,12 +125,18 @@ Route::group([
     Route::resource('comment', 'CommentController', ['except' => [
         'create', 'store'
     ]]);
-    // загрузка изображения из редактора
-    Route::post('upload/image', 'ImageController@upload')
-        ->name('upload.image');
-    // удаление изображения в редакторе
-    Route::delete('remove/image', 'ImageController@remove')
-        ->name('remove.image');
+    // загрузка изображения поста блога из wysiwyg-редактора
+    Route::post('upload/post/image', 'PostImageController@upload')
+        ->name('upload.post.image');
+    // удаление изображения поста блога в wysiwyg-редакторе
+    Route::delete('remove/post/image', 'PostImageController@remove')
+        ->name('remove.post.image');
+    // загрузка изображения страницы из wysiwyg-редактора
+    Route::post('upload/page/image', 'PageImageController@upload')
+        ->name('upload.page.image');
+    // удаление изображения страницы в wysiwyg-редакторе
+    Route::delete('remove/page/image', 'PageImageController@remove')
+        ->name('remove.page.image');
     /*
      * Редактирование персональных данных
      */
