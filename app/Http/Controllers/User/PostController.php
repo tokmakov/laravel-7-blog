@@ -141,31 +141,4 @@ class PostController extends Controller {
     private function can(Post $post) {
         return $post->isAuthor() && !$post->isVisible();
     }
-
-    /**
-     * Отправляет письмо админу о создании нового поста
-     */
-    private function notify(Post $post) {
-        $users = User::whereNotNull('email_verified_at')->get();
-        $editors = [];
-        foreach ($users as $user) {
-            if ($user->hasPermAnyWay('publish-post')) {
-                $editors[] = $user->email;
-            }
-            if (count($editors) > 1) break;
-        }
-        if (count($editors)) {
-            Mail::send(
-                'email.new-post',
-                ['post' => $post],
-                function ($message) use ($editors) {
-                    $message->to($editors[0]);
-                    if (isset($editors[1])) {
-                        $message->cc($editors[1]);
-                    }
-                    $message->subject('Новый пост блога');
-                }
-            );
-        }
-    }
 }
