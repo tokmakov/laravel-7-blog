@@ -19,10 +19,10 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.5",
-        "fakerphp/faker": "^1.9.1"
+        "fakerphp/faker": "^1.9.1",
+        "barryvdh/laravel-debugbar": "^3.5"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.5",
         "barryvdh/laravel-ide-helper": "^2.8",
         "facade/ignition": "^2.0",
         "mockery/mockery": "^1.3.1",
