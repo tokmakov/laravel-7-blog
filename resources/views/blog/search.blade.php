@@ -3,7 +3,6 @@
 @section('content')
     <h1 class="mb-3">Поиск по блогу</h1>
     <p>Поисковый запрос: {{ $search ?? 'пусто' }}</p>
-    @dd($posts)
     @if ($posts->count())
         @foreach ($posts as $post)
             @include('blog.part.post', ['post' => $post])
