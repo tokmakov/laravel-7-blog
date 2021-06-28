@@ -19,7 +19,7 @@ class ForgotPasswordController extends Controller {
      * Форма ввода адреса почты
      */
     public function form() {
-        return view('user.forgot');
+        return view('auth.forgot');
     }
 
     /**

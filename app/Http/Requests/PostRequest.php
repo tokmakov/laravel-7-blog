@@ -19,7 +19,7 @@ class PostRequest extends FormRequest {
      *
      * @return array
      */
-    public function rules($some) {
+    public function rules() {
         $unique = 'unique:posts,slug';
         if (in_array($this->route()->getName(), ['admin.post.update', 'user.post.update'])) {
             // получаем модель Post через маршрут admin/post/{post}
