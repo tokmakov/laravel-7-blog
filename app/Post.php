@@ -118,7 +118,6 @@ class Post extends Model {
      * Поиск постов блога по заданным словам
      */
     public function scopeSearch($builder, $search) {
-        // http://www.host12.ru/blog/item/592
         // обрезаем поисковый запрос
         $search = iconv_substr($search, 0, 64);
         // удаляем все, кроме букв и цифр
@@ -152,10 +151,10 @@ class Post extends Model {
             $relevance .= " + IF (`tags`.`name` LIKE '%" . $words[$i] . "%', 3, 0)";
         }
 
-        $builder->join('users', 'users.id', '=', 'posts.user_id')
+        $builder->distinct()->join('users', 'users.id', '=', 'posts.user_id')
             ->leftJoin('post_tag', 'post_tag.post_id', '=', 'posts.id')
             ->leftJoin('tags', 'post_tag.tag_id', '=', 'tags.id')
-            ->select('posts.*', DB::raw('MAX(' . $relevance . ') as relevance'))
+            ->select('posts.*', DB::raw($relevance . ' as relevance'))
             ->where('posts.name', 'like', '%' . $words[0] . '%')
             ->orWhere('posts.content', 'like', '%' . $words[0] . '%')
             ->orWhere('users.name', 'like', '%' . $words[0] . '%')
@@ -166,7 +165,6 @@ class Post extends Model {
             $builder = $builder->orWhere('users.name', 'like', '%' . $words[$i] . '%');
             $builder = $builder->orWhere('tags.name', 'like', '%' . $words[$i] . '%');
         }
-        $builder->groupByraw('1');
         $builder->orderBy('relevance', 'desc');
         return $builder;
     }
