@@ -19,3 +19,5 @@
 15. [Восстановление постов, slug для категории, поста и страницы](https://tokmakov.msk.ru/blog/item/611)
 16. [Роль нового пользователя, сообщение админу о новом посте](https://tokmakov.msk.ru/blog/item/612)
 17. [Временная зона для пользователей, деплой на хостинг TimeWeb](https://tokmakov.msk.ru/blog/item/613)
+
+Демо-сайт [здесь](http://laravel-7-blog.tokmakov.msk.ru/)
